@@ -5,15 +5,16 @@
   background-image: url(./assets/images/Marvel-home.jpg);
   background-position: center;
   background-size: cover;
+  z-index: -1;
 }
 
-.App-title {
-  /* width: 100vw; */
-  margin-left: 40vw;
-  /* margin-inline: auto; */
-  /* margin-top: 4rem; */
-  cursor: pointer;
-}
-a {
+/* .App-title { */
+/* width: 100vw; */
+/* margin-left: 40vw; */
+/* margin-inline: auto; */
+/* margin-top: 4rem; */
+/* cursor: pointer;
+} */
+/* a {
   text-decoration: none;
-}
+} */

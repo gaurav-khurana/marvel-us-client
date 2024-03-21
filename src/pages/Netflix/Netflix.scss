@@ -2,10 +2,8 @@
 @use "../../styles/partials/mixins" as *;
 
 .netflix-container {
-  //   background-image: url(../../assets/images/Marvel-landing-page.jpg);
   width: 100vw;
-  //   height: 90vh;
-
+  padding-top: 2rem;
   background-color: $color-black;
   margin-inline: auto;
 
@@ -16,12 +14,17 @@
 .shows__card {
   color: $color-yellow;
   width: 25vw;
-  height: 25rem;
+  height: 40rem;
   margin-top: 2rem;
   margin-right: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
+  transition: 0.3s;
 
   @include flexbox(column, space-around, flex-start);
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .shows {
@@ -29,13 +32,12 @@
     width: 15rem;
     height: 15rem;
     border-radius: 25px;
+    object-fit: contain;
+    margin-left: 2rem;
   }
 
   &__title {
     color: $color-orange;
+    margin-bottom: 1rem;
   }
 }
-
-// a {
-//   margin-top: 10rem;
-// }

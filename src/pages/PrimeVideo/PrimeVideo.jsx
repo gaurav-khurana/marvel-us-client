@@ -1,85 +1,40 @@
 import "./PrimeVideo.scss";
-import NetflixIcon from "../../assets/icons/logo-primevideo.jpeg";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import MarvelCard from "../../components/MarvelCard/MarvelCard";
+import axios from "axios";
 
 function PrimeVideo() {
+  const website =
+    "https://www.primevideo.com/offers/nonprimehomepage/ref=atv_hom_offers_c_9zZ8D2_hom";
+
+  const [disneyData, setDisneyData] = useState("");
+
+  useEffect(() => {
+    const fetchDisneydata = async () => {
+      const response = await axios.get("http://localhost:8080/primevideo");
+      setDisneyData(response.data);
+    };
+
+    fetchDisneydata();
+  }, []);
+
   return (
     <>
       <div className="primevideo-container">
-        <Link to={"https://www.disneyplus.com/en-ca"}>
-          <article className="shows__card">
-            <img className="shows__img" src={NetflixIcon} alt="NetflixIcon" />
-            <h2 className="shows__title">Title</h2>
-            <h3 className="shows__year">Year</h3>
-            <h3 className="shows__platform">Platform</h3>
-            <p className="shows__description">
-              description Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Voluptas, ab.
-            </p>
-          </article>
-        </Link>
-        <Link to={"https://www.disneyplus.com/en-ca"}>
-          <article className="shows__card">
-            <img className="shows__img" src={NetflixIcon} alt="NetflixIcon" />
-            <h2 className="shows__title">Title</h2>
-            <h3 className="shows__year">Year</h3>
-            <h3 className="shows__platform">Platform</h3>
-            <p className="shows__description">
-              description Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Voluptas, ab.
-            </p>
-          </article>
-        </Link>
-        <Link to={"https://www.disneyplus.com/en-ca"}>
-          <article className="shows__card">
-            <img className="shows__img" src={NetflixIcon} alt="NetflixIcon" />
-            <h2 className="shows__title">Title</h2>
-            <h3 className="shows__year">Year</h3>
-            <h3 className="shows__platform">Platform</h3>
-            <p className="shows__description">
-              description Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Voluptas, ab.
-            </p>
-          </article>
-        </Link>
-        <Link to={"https://www.disneyplus.com/en-ca"}>
-          <article className="shows__card">
-            <img className="shows__img" src={NetflixIcon} alt="NetflixIcon" />
-            <h2 className="shows__title">Title</h2>
-            <h3 className="shows__year">Year</h3>
-            <h3 className="shows__platform">Platform</h3>
-            <p className="shows__description">
-              description Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Voluptas, ab.
-            </p>
-          </article>
-        </Link>
-        <Link to={"https://www.disneyplus.com/en-ca"}>
-          <article className="shows__card">
-            <img className="shows__img" src={NetflixIcon} alt="NetflixIcon" />
-            <h2 className="shows__title">Title</h2>
-            <h3 className="shows__year">Year</h3>
-            <h3 className="shows__platform">Platform</h3>
-            <p className="shows__description">
-              description Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Voluptas, ab.
-            </p>
-          </article>
-        </Link>
-        <Link to={"https://www.disneyplus.com/en-ca"}>
-          <article className="shows__card">
-            <img className="shows__img" src={NetflixIcon} alt="NetflixIcon" />
-            <h2 className="shows__title">Title</h2>
-            <h3 className="shows__year">Year</h3>
-            <h3 className="shows__platform">Platform</h3>
-            <p className="shows__description">
-              description Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Voluptas, ab.
-            </p>
-          </article>
-        </Link>
+        {disneyData &&
+          disneyData.map((show) => (
+            <MarvelCard
+              key={show.id}
+              id={show.id}
+              website={website}
+              title={show.title}
+              year={show.year}
+              img={show.image}
+              platform={show.platform}
+              description={show.description}
+            />
+          ))}
       </div>
-      ;
     </>
   );
 }

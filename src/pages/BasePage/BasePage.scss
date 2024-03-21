@@ -2,12 +2,13 @@
 @use "../../styles/partials/variables" as *;
 
 .App-title {
-  color: $color-black;
-  margin-top: 5rem;
+  color: $color-white;
+  margin-top: 55vh;
+  margin-left: 39vw;
   transition: 0.3s;
+
   &:hover {
-    color: $color-white;
+    color: $color-yellow;
     transform: scale(1.1);
-    // transform: translateY(2rem);
   }
 }
