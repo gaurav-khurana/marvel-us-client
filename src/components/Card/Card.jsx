@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Card({ website, img, title, year, platform, description }) {
+function MarvelCard({ website, img, title, year, platform, description }) {
   return (
     <>
       <Link to={website}>
@@ -16,4 +16,4 @@ function Card({ website, img, title, year, platform, description }) {
   );
 }
 
-export default Card;
+export default MarvelCard;
