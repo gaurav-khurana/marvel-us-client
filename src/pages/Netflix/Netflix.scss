@@ -1,0 +1,41 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.netflix-container {
+  //   background-image: url(../../assets/images/Marvel-landing-page.jpg);
+  width: 100vw;
+  //   height: 90vh;
+
+  background-color: $color-black;
+  margin-inline: auto;
+
+  @include flexbox(row, space-evenly, center);
+  flex-wrap: wrap;
+}
+
+.shows__card {
+  color: $color-yellow;
+  width: 25vw;
+  height: 25rem;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+
+  @include flexbox(column, space-around, flex-start);
+}
+
+.shows {
+  &__img {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 25px;
+  }
+
+  &__title {
+    color: $color-orange;
+  }
+}
+
+// a {
+//   margin-top: 10rem;
+// }

@@ -7,6 +7,7 @@ import Disney from "./pages/Disney/Disney";
 import Netflix from "./pages/Netflix/Netflix";
 import PrimeVideo from "./pages/PrimeVideo/PrimeVideo";
 import Header from "./components/Header/Header";
+import BasePage from "./pages/BasePage/BasePage";
 
 function App() {
   return (
@@ -15,15 +16,13 @@ function App() {
         <Header />
         <Routes>
           {/* <Route path="/" /> */}
+          <Route path="/" element={<BasePage />} />
           <Route path="/home" element={<Homepage />} />
           <Route path="/disney" element={<Disney />} />
           <Route path="/netflix" element={<Netflix />} />
           <Route path="/primevideo" element={<PrimeVideo />} />
         </Routes>
       </BrowserRouter>
-      <a href="/home">
-        <h1 className="App-title">Enter Marvel Universe</h1>
-      </a>
     </div>
   );
 }
