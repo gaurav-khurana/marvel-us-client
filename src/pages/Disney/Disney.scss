@@ -1,0 +1,33 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.disney-container {
+  //   background-image: url(../../assets/images/Marvel-landing-page.jpg);
+  width: 100vw;
+  background-color: rgba(30, 1, 1, 255);
+
+  @include flexbox(row, center, center);
+  flex-wrap: wrap;
+}
+
+.shows__card {
+  color: $color-yellow;
+  width: 25vw;
+  height: 15rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+
+  @include flexbox(column, space-around, flex-start);
+}
+
+.shows {
+  &__img {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 25px;
+  }
+}
+
+// a {
+//   margin-top: 10rem;
+// }

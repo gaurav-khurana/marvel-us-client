@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "./App.scss";
+import "bootstrap/dist/css/bootstrap.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Homepage from "./pages/Homepage/Homepage";
+import Disney from "./pages/Disney/Disney";
+import Netflix from "./pages/Netflix/Netflix";
+import PrimeVideo from "./pages/PrimeVideo/PrimeVideo";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          {/* <Route path="/" /> */}
+          <Route path="/home" element={<Homepage />} />
+          <Route path="/disney" element={<Disney />} />
+          <Route path="/netflix" element={<Netflix />} />
+          <Route path="/primevideo" element={<PrimeVideo />} />
+        </Routes>
+      </BrowserRouter>
+      <a href="/home">
+        <h1 className="App-title">Enter Marvel Universe</h1>
+      </a>
     </div>
   );
 }
