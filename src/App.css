@@ -5,13 +5,11 @@
   background-image: url(./assets/images/Marvel-home.jpg);
   background-position: center;
   background-size: cover;
+  font-family: "Marvel-Regular";
 }
 
 .App-title {
-  /* width: 100vw; */
   margin-left: 40vw;
-  /* margin-inline: auto; */
-  /* margin-top: 4rem; */
   cursor: pointer;
 }
 a {
